@@ -9,7 +9,6 @@ def get_inventory(url):
     return r.json()
 
 def get_values(invent):
-    inventory = json.loads(invent)
     count = inventory['count']
     text = inventory['text']
     return count, text
@@ -26,8 +25,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     request = get_inventory(args.url)
-    invent = requests.text
-    count, text = get_values(invent)
+    count, text = get_values(request)
     print_inventory(count, text)
 
 
