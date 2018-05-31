@@ -9,8 +9,9 @@ def get_inventory(url):
     return r.json()
 
 def get_values(invent):
-    count = inventory['count']
-    text = inventory['text']
+    inventory = json.loads(invent)
+    count = inventory["count"]
+    text = inventory["text"]
     return count, text
 
 
